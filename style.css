@@ -1,0 +1,171 @@
+:root {
+  --bg: #0b1020;
+  --card: #11162a;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --accent: #38bdf8;
+  --accent2: #22d3ee;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background: linear-gradient(180deg, #050816, #0b1020);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(56,189,248,0.15), transparent 60%);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.hero p {
+  color: var(--muted);
+  margin-top: 12px;
+  font-size: 1.1rem;
+}
+
+.links {
+  margin-top: 25px;
+  display: flex;
+  gap: 20px;
+  z-index: 1;
+}
+
+.links a {
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(56,189,248,0.4);
+  color: var(--accent);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.links a:hover {
+  background: var(--accent);
+  color: #020617;
+  box-shadow: 0 0 25px rgba(56,189,248,0.6);
+}
+
+/* ===== SECTIONS ===== */
+section {
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 0 24px;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+section h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+}
+
+/* ===== CARDS ===== */
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 25px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.card span {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.card ul {
+  margin-top: 12px;
+  padding-left: 18px;
+}
+
+.card ul li {
+  margin-bottom: 8px;
+  color: #d1d5db;
+}
+
+/* ===== SKILLS ===== */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.skills span {
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(56,189,248,0.1);
+  border: 1px solid rgba(56,189,248,0.4);
+  color: var(--accent);
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.skills span:hover {
+  background: var(--accent);
+  color: #020617;
+  transform: scale(1.05);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ===== ANIMATI*
