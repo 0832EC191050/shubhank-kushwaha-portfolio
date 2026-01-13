@@ -1,53 +1,33 @@
-// Scroll reveal animation
-const reveals = document.querySelectorAll(".reveal");
-
-const revealOnScroll = () => {
-  const windowHeight = window.innerHeight;
-  reveals.forEach(el => {
-    const elementTop = el.getBoundingClientRect().top;
-    if (elementTop < windowHeight - 100) {
-      el.classList.add("active");
-    }
-  });
-};
-
-window.addEventListener("scroll", revealOnScroll);
-revealOnScroll();
-
-// Typing effect in hero
 const roles = [
-  "Software Engineer",
   "Ruby on Rails Developer",
   "Full Stack Engineer",
+  "Backend Specialist",
   "Problem Solver"
 ];
 
 let roleIndex = 0;
 let charIndex = 0;
-const roleElement = document.createElement("span");
-roleElement.style.color = "#38bdf8";
-document.querySelector(".hero p").appendChild(document.createElement("br"));
-document.querySelector(".hero p").appendChild(roleElement);
+const typingEl = document.getElementById("typing");
 
-function typeRole() {
+function type() {
   if (charIndex < roles[roleIndex].length) {
-    roleElement.textContent += roles[roleIndex].charAt(charIndex);
+    typingEl.textContent += roles[roleIndex].charAt(charIndex);
     charIndex++;
-    setTimeout(typeRole, 100);
+    setTimeout(type, 90);
   } else {
-    setTimeout(eraseRole, 2000);
+    setTimeout(erase, 1800);
   }
 }
 
-function eraseRole() {
+function erase() {
   if (charIndex > 0) {
-    roleElement.textContent = roles[roleIndex].substring(0, charIndex - 1);
+    typingEl.textContent = roles[roleIndex].substring(0, charIndex - 1);
     charIndex--;
-    setTimeout(eraseRole, 60);
+    setTimeout(erase, 60);
   } else {
     roleIndex = (roleIndex + 1) % roles.length;
-    setTimeout(typeRole, 300);
+    setTimeout(type, 300);
   }
 }
 
-typeRole();
+type();

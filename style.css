@@ -47,13 +47,21 @@ body {
 .hero h1 {
   font-size: 3rem;
   font-weight: 800;
-  letter-spacing: 1px;
+  letter-spacing: 0.2px;
 }
 
-.hero p {
+.hero .tagline {
   color: var(--muted);
+  font-size: 1.2rem;
   margin-top: 12px;
-  font-size: 1.1rem;
+}
+
+.hero .intro {
+  max-width: 720px;
+  margin: 18px auto 36px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #cbd5e1;
 }
 
 .links {
@@ -81,8 +89,9 @@ body {
 /* ===== SECTIONS ===== */
 section {
   max-width: 1100px;
-  margin: 80px auto;
+  margin: 60px auto;
   padding: 0 24px;
+  scroll-margin-top: 80px;
 }
 
 section h2 {
@@ -166,6 +175,83 @@ footer {
   padding: 40px 20px;
   color: var(--muted);
   font-size: 0.9rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+
 }
+
+
+.cta {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  z-index: 1;
+}
+
+.btn {
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #020617;
+}
+
+.btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(56,189,248,0.35);
+}
+
+.btn.secondary {
+  border: 1px solid var(--accent);
+  color: var(--accent);
+}
+
+.btn.secondary:hover {
+  background: rgba(56,189,248,0.1);
+}
+
+.social-links {
+  margin-top: 28px;
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  flex-wrap: wrap;
+  z-index: 1;
+}
+
+.social-links a {
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(56,189,248,0.35);
+  color: var(--accent);
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.social-links a:hover {
+  background: var(--accent);
+  color: #020617;
+  box-shadow: 0 0 18px rgba(56,189,248,0.5);
+}
+
+#typing {
+  color: var(--accent);
+  font-weight: 600;
+  border-right: 2px solid var(--accent);
+  padding-right: 4px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { border-color: transparent; }
+  25%, 75% { border-color: var(--accent); }
+}
+
 
 /* ===== ANIMATI*
